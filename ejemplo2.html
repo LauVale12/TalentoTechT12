@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validar formulario</title>
+</head>
+
+<body>
+    <form id="miFormulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+        <button type="submit">Enviar</button>
+    </form>
+    <script>
+        let formulario = document.getElementById('miFormulario');
+        formulario.addEventListener('submit', function (event) {
+            let nombre = document.getElementById('nombre').value;
+            if (nombre === '') {
+                alert('Por favor, ingresa tu nombre.');
+                event.preventDefault(); // Previene el envío del formulario
+            }
+        });
+    </script>
+</body>
+
+</html>
